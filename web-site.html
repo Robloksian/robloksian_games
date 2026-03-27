@@ -1,0 +1,407 @@
+<!DOCTYPE html><html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WELCOME TO THE HELL — Официальный сайт</title>
+  <style>
+    :root {
+      --bg: #0b0b10;
+      --panel: #14141b;
+      --soft: #1b1b24;
+      --text: #f3f3f5;
+      --muted: #b0b3bd;
+      --accent: #d62839;
+      --accent-2: #5b7cfa;
+      --line: rgba(255,255,255,0.08);
+      --glow: 0 0 30px rgba(214, 40, 57, 0.18);
+    }* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(214,40,57,0.12), transparent 30%),
+    linear-gradient(180deg, #09090d 0%, #0b0b10 100%);
+  color: var(--text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1100px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  background: rgba(10,10,14,0.78);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+}
+
+.brand {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.brand span {
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.hero {
+  padding: 72px 0 36px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: var(--glow);
+}
+
+.eyebrow {
+  display: inline-block;
+  padding: 8px 12px;
+  border: 1px solid rgba(214,40,57,0.35);
+  border-radius: 999px;
+  color: #ffd9dd;
+  background: rgba(214,40,57,0.08);
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+h1, h2, h3 {
+  margin: 0 0 12px;
+}
+
+h1 {
+  font-size: clamp(34px, 6vw, 60px);
+  line-height: 0.95;
+  letter-spacing: -1.4px;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 720px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 18px;
+  border-radius: 14px;
+  font-weight: 700;
+  border: 1px solid var(--line);
+  transition: transform 0.15s ease, opacity 0.15s ease, background 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+  border-color: rgba(255,255,255,0.08);
+}
+
+.btn-secondary {
+  background: var(--soft);
+  color: var(--text);
+}
+
+.hero-side {
+  display: grid;
+  gap: 16px;
+}
+
+.stat {
+  padding: 18px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.025);
+  border: 1px solid var(--line);
+}
+
+.stat-label {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.stat strong {
+  font-size: 22px;
+}
+
+.section {
+  padding: 18px 0 24px;
+}
+
+.section-title {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.list {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.timeline {
+  display: grid;
+  gap: 14px;
+}
+
+.update-item {
+  padding: 16px 18px;
+  border-radius: 18px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+}
+
+.update-item h3 {
+  font-size: 17px;
+  margin-bottom: 8px;
+}
+
+.update-item p {
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.hint-box {
+  background: rgba(91,124,250,0.08);
+  border: 1px solid rgba(91,124,250,0.2);
+  color: #d8e0ff;
+  border-radius: 18px;
+  padding: 16px 18px;
+  line-height: 1.7;
+}
+
+.download-panel {
+  text-align: center;
+  padding: 32px 24px;
+  background: linear-gradient(180deg, rgba(214,40,57,0.08), rgba(255,255,255,0.02));
+  border: 1px solid rgba(214,40,57,0.18);
+  border-radius: 24px;
+  box-shadow: var(--glow);
+}
+
+.download-panel p {
+  color: var(--muted);
+  max-width: 700px;
+  margin: 0 auto 20px;
+  line-height: 1.7;
+}
+
+.footer {
+  padding: 32px 0 48px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.warning {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #ffc6c6;
+}
+
+@media (max-width: 860px) {
+  .hero-grid,
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">WELCOME TO THE <span>HELL</span></div>
+      <nav class="nav-links">
+        <a href="#about">Об игре</a>
+        <a href="#updates">Update Log</a>
+        <a href="#hints">Hints</a>
+        <a href="#download">Скачать</a>
+      </nav>
+    </div>
+  </header> <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="card">
+          <div class="eyebrow">Локальная браузерная игра с сохранением на устройстве</div>
+          <h1>WELCOME TO THE HELL</h1>
+          <p class="subtitle">
+            Сюжетная игра, которая начиналась как простая дуэль на угадывание числа,
+            а превратилась в странную историю про память, сбой, ERROR-режим и имя <strong>Guest</strong>.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="guess_game.html" download>Скачать игру (.html)</a>
+            <a class="btn btn-secondary" href="#about">Узнать больше</a>
+          </div>
+          <div class="warning">
+            После скачивания просто открой файл <strong>guess_game.html</strong> в браузере.
+          </div>
+        </div><div class="hero-side">
+      <div class="stat">
+        <div class="stat-label">Формат</div>
+        <strong>HTML-игра</strong>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Жанр</div>
+        <strong>Психологическая сюжетная загадка</strong>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Сохранения</div>
+        <strong>Локально в браузере</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="container grid-2">
+    <div class="card">
+      <h2 class="section-title">Об игре</h2>
+      <p class="subtitle" style="font-size:16px;">
+        Игра развивается как таймлайн с секретами: сначала обычный режим, потом дуэль,
+        затем ERROR, CMD, память, Guest_01 и скрытые сюжетные ветки.
+      </p>
+      <ul class="list">
+        <li>Обычный режим и дуэль с ботом</li>
+        <li>Скрытые пасхалки и команды</li>
+        <li>Ветка Guest с фрагментами памяти</li>
+        <li>ERROR-режим, CMD и сюжетные диалоги</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2 class="section-title">Как запустить</h2>
+      <ul class="list">
+        <li>Нажми кнопку <strong>Скачать игру (.html)</strong></li>
+        <li>Сохрани файл <strong>guess_game.html</strong></li>
+        <li>Открой его в браузере на телефоне или ПК</li>
+        <li>Играй и открывай скрытые события</li>
+      </ul>
+      <p class="warning">
+        Прогресс хранится на устройстве игрока и не синхронизируется через сервер.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="updates" class="section">
+  <div class="container">
+    <h2 class="section-title">Update Log</h2>
+    <div class="timeline">
+      <div class="update-item">
+        <h3>0.2 ALPHA</h3>
+        <p>Появились режимы игры, история событий, подсказки, пасхалки и улучшенный интерфейс.</p>
+      </div>
+      <div class="update-item">
+        <h3>0.2.1 ALPHA</h3>
+        <p>Добавлены Guest-ивент, ERROR-режим, CMD, странные сообщения бота и ветка памяти.</p>
+      </div>
+      <div class="update-item">
+        <h3>0.3 (в разработке)</h3>
+        <p>Планируются новые сюжетные фрагменты, продолжение Guest-линии, сайт проекта и будущая мобильная версия.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="hints" class="section">
+  <div class="container grid-2">
+    <div class="hint-box">
+      <h3>Hints</h3>
+      Не все события открываются сразу. Некоторые зависят от имени игрока, некоторые — от уже найденных фрагментов.
+      Если игра кажется слишком обычной, попробуй обратить внимание на повторяющиеся фразы и на то, как бот реагирует на Guest.
+    </div>
+    <div class="hint-box">
+      <h3>Без спойлеров</h3>
+      Не все режимы видны с самого начала. Иногда новая кнопка появляется только после конкретного события. Иногда игра начинает говорить с тобой иначе, если считает, что уже знает тебя.
+    </div>
+  </div>
+</section>
+
+<section id="download" class="section">
+  <div class="container">
+    <div class="download-panel">
+      <h2 class="section-title">Скачать игру</h2>
+      <p>
+        Текущая версия распространяется как один HTML-файл. Это значит, что игру можно скачать,
+        открыть в браузере и играть без установки Python или других программ.
+      </p>
+      <a class="btn btn-primary" href="guess_game.html" download>Скачать guess_game.html</a>
+      <div class="warning">
+        В будущем здесь может появиться и кнопка скачивания APK.
+      </div>
+    </div>
+  </div>
+</section>
+
+  </main> <footer class="footer">
+    <div class="container">
+      WELCOME TO THE HELL — официальный сайт проекта. Локальная браузерная игра с сохранением прогресса на устройстве игрока.
+    </div>
+  </footer>
+</body>
+</html>
